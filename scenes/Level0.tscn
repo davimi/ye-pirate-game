@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Level0.gd" type="Script" id=1]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_70.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Sea.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/ShipwreckedPerson.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
+
+[node name="Level0" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sea" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -0.229065 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -1, 0, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 12, 0, -65530, 12, 0, -65529, 12, 0, -65528, 12, 0, -65527, 12, 0, -65526, 12, 0, -65525, 12, 0, -65524, 12, 0, -65523, 12, 0, -65522, 12, 0, -65521, 12, 0, -65520, 12, 0, 65535, 4, 0, 16, 12, 0, 131071, 4, 0, 65546, 0, 0, 65547, 1, 0, 65548, 2, 0, 65552, 12, 0, 196607, 4, 0, 131082, 9, 0, 131083, 10, 0, 131084, 11, 0, 131088, 12, 0, 262143, 12, 0, 196624, 12, 0, 327679, 12, 0, 262160, 12, 0, 393215, 12, 0, 327681, 0, 0, 327682, 1, 0, 327683, 1, 0, 327684, 2, 0, 327696, 12, 0, 458751, 12, 0, 393217, 4, 0, 393218, 12, 0, 393219, 12, 0, 393220, 6, 0, 393232, 12, 0, 524287, 12, 0, 458753, 4, 0, 458754, 3, 0, 458755, 10, 0, 458756, 11, 0, 458768, 12, 0, 589823, 12, 0, 524289, 9, 0, 524290, 11, 0, 524304, 12, 0, 655359, 12, 0, 589840, 12, 0, 720895, 12, 0, 655360, 12, 0, 655361, 12, 0, 655362, 12, 0, 655363, 12, 0, 655364, 12, 0, 655365, 12, 0, 655366, 12, 0, 655367, 12, 0, 655368, 12, 0, 655369, 12, 0, 655370, 12, 0, 655371, 12, 0, 655372, 12, 0, 655373, 12, 0, 655374, 12, 0, 655375, 12, 0, 655376, 12, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1024
+limit_bottom = 600
+
+[node name="ShipwreckedPerson" parent="." instance=ExtResource( 5 )]
+position = Vector2( 849.48, 481.255 )
+
+[node name="Deco" type="Node2D" parent="."]
+
+[node name="Palmtree" type="Sprite" parent="Deco"]
+position = Vector2( 233.045, 392.407 )
+texture = ExtResource( 2 )
+offset = Vector2( -3.51645, -2.5611 )
+
+[node name="Palmtree2" type="Sprite" parent="Deco"]
+position = Vector2( 144.144, 455.876 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 767.17, 335.436 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+offset = Vector2( 5, 5 )
+transform = Transform2D( 1, 0, 0, 1, 5, 5 )
+
+[connection signal="body_entered" from="ShipwreckedPerson" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPerson" to="." method="_on_ShipwreckedPerson_body_entered"]
