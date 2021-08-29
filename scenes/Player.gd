@@ -68,7 +68,6 @@ func shoot_direction(direction: Vector2, from_position: Vector2):
 	var projectile = cannon_balls.instance()
 	add_child(projectile)
 	projectile.position = from_position
-	print("shooting dir: ", direction)
 	projectile.apply_impulse(Vector2(), direction * SHOT_ACCELERATION)
 	
 	

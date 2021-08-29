@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/flag (1).png" type="Texture" id=1]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/nest.png" type="Texture" id=2]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/hullLarge (1).png" type="Texture" id=3]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/sailLarge (2).png" type="Texture" id=4]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/cannonLoose.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Ememy1.gd" type="Script" id=6]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/sailLarge (8).png" type="Texture" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 23.7453
+height = 62.455
+
+[node name="Ememy1" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 19
+mass = 20.0
+gravity_scale = 0.0
+script = ExtResource( 6 )
+
+[node name="CannonLeft" type="Sprite" parent="."]
+position = Vector2( 17, 15 )
+texture = ExtResource( 5 )
+
+[node name="CannonRight" type="Sprite" parent="."]
+position = Vector2( -17, 15 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="Hull" type="Sprite" parent="."]
+position = Vector2( -0.101639, 0 )
+texture = ExtResource( 3 )
+
+[node name="SailNormal" type="Sprite" parent="."]
+position = Vector2( 0.927887, -6.17727 )
+texture = ExtResource( 7 )
+
+[node name="SailDamaged" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0.46566, -5.98213 )
+texture = ExtResource( 4 )
+
+[node name="Nest" type="Sprite" parent="."]
+position = Vector2( -0.101639, -32 )
+texture = ExtResource( 2 )
+
+[node name="Pole" type="Sprite" parent="."]
+position = Vector2( 0, -44 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.155228 )
+shape = SubResource( 1 )

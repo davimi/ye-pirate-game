@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Effects/explosion2.png" type="Texture" id=1]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Effects/explosion3.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Explosion.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "explode",
+"speed": 10.0
+} ]
+
+[node name="Explosion" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "explode"
+playing = true
+script = ExtResource( 3 )
+
+[connection signal="animation_finished" from="." to="." method="_on_Explosion_animation_finished"]

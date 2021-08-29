@@ -21,3 +21,8 @@ func _on_ShipwreckedPerson_body_entered(body):
 
 func reload_level():
 	get_tree().change_scene("res://Level0.tscn")
+
+
+func _on_Ememy1_body_entered(body):
+	print("sdg")
+	body.handleDamage()
