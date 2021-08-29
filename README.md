@@ -1,6 +1,8 @@
-# Sea battle game
+# Pirate battle game
 
-This is my first attempt at a Godot game. 
+**WORK IN PROGRESS**
+
+This is my first attempt at a Godot game. All assets are freely available from [Kenny](https://kenney.nl/).
 
 ## TODO
 
