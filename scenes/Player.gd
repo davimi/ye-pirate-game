@@ -21,6 +21,8 @@ var can_shoot_left = true
 var can_shoot_right = true
 var fire_rate = 0.5
 
+var hit_points = 8
+
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -69,7 +71,11 @@ func shoot_direction(direction: Vector2, from_position: Vector2):
 	add_child(projectile)
 	projectile.position = from_position
 	projectile.apply_impulse(Vector2(), direction * SHOT_ACCELERATION)
-	
+
+func handle_hit():
+	hit_points -= 1
+	if hit_points <= 0:
+		queue_free()
 	
 func _physics_process(delta):
 	move_player(delta)

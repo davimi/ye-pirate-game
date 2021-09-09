@@ -3,13 +3,20 @@
 [ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_73.png" type="Texture" id=1]
 
 [node name="Sea" type="Node2D"]
-modulate = Color( 0.494118, 0.67451, 0.713726, 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="background" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.698039, 0.686275, 1 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 1024, 600 )
+region_rect = Rect2( 0, 0, 3000, 2000 )
+region_filter_clip = true
+
+[node name="background2" type="Sprite" parent="."]
+modulate = Color( 0.447059, 0.611765, 0.698039, 0.352941 )
+position = Vector2( 90.4316, 79.7925 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 3000, 2000 )
 region_filter_clip = true
