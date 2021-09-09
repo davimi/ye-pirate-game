@@ -11,6 +11,7 @@ var rotation_speed: float = 0.0174533
 var acceleration = 0.05
 var deceleration = 0.03
 
+
 var motion = Vector2()  # The player's normalized movement vector
 var velocity = Vector2() # The player's actual movement vector
 const DEFAULT_FACING_DIRECTION = Vector2(0,1)
@@ -28,6 +29,8 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	$CannonRight.rotate_180()
 	
+	$WatergustParticles.speed_scale = 0
+	
 func move_player(delta):
 	var movedir = _get_rotation(delta)
 	
@@ -38,6 +41,11 @@ func move_player(delta):
 	
 	velocity = motion * speed * delta
 	move_and_collide(velocity)
+	set_gust_behviour(motion.abs().length())
+
+func set_gust_behviour(scale: float):
+	# $WatergustParticles.process_material.initial_velocity = scale * 100
+	$WatergustParticles.speed_scale = scale * 1.2
 
 func _get_rotation(delta):
 	var turn_speed = _get_turn_speed()

@@ -25,25 +25,6 @@ func handle_hit():
 		$SailNormal.visible = false
 	if hit_points <= 0:
 		queue_free()
-	
-func _physics_process(delta):
-	# When this node is an instance of a pathfollow2d, it will be located relastive to the parent and also have the relative rotation
-
-	match current_state:
-		State.IDLE:
-			path_follow.set_offset(path_follow.get_offset() + speed_idle * delta)
-		State.PURSUING:
-			$FrontCannon.look_at(player.position) 
-			var aim_vector = (player.get_global_position() - $FrontCannon.get_global_position()).normalized() * rand_range(0.8, 1.2)
-			if can_shoot:
-				var projectile = cannon_balls.instance()
-				add_child(projectile)
-				projectile.position = $FrontCannon.position
-				projectile.apply_impulse(Vector2(), aim_vector * SHOT_ACCELERATION)
-				can_shoot = false
-				yield(get_tree().create_timer(fire_rate), "timeout")
-				can_shoot = true
-
 
 func _on_PlayerDetection_body_entered(body):
 	if player:
@@ -56,4 +37,33 @@ func _on_PlayerDetection_body_exited(body):
 	current_state = State.IDLE
 	if body == player:
 		player = null
+
+func shoot_at_player():
+	$FrontCannon.look_at(player.position) 
+	var aim_vector = (player.get_global_position() - $FrontCannon.get_global_position()).normalized() * rand_range(0.8, 1.2)
+	if can_shoot:
+		var projectile = cannon_balls.instance()
+		add_child(projectile)
+		projectile.position = $FrontCannon.position
+		projectile.apply_impulse(Vector2(), aim_vector * SHOT_ACCELERATION)
+		can_shoot = false
+		yield(get_tree().create_timer(fire_rate), "timeout")
+		can_shoot = true	
+
+func set_gust_behviour(scale: float):
+	# $WatergustParticles.process_material.initial_velocity = scale * 100
+	$WatergustParticles.speed_scale = scale * 1.2
+			
+func _physics_process(delta):
+	# When this node is an instance of a pathfollow2d, it will be located relastive to the parent and also have the relative rotation
+	match current_state:
+		State.IDLE:
+			path_follow.set_offset(path_follow.get_offset() + speed_idle * delta)
+		State.PURSUING:
+			set_gust_behviour(0)
+			shoot_at_player()
+			
+
+
+
 
