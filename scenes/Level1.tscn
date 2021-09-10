@@ -1,0 +1,86 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/Sea.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Level1.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_50.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Ememy1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_67.png" type="Texture" id=7]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_62.png" type="Texture" id=8]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_46.png" type="Texture" id=9]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_88.png" type="Texture" id=10]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_51.png" type="Texture" id=11]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_66.png" type="Texture" id=12]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_90.png" type="Texture" id=13]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 757.738, 1122.42, 20.9634, 11.0483, -20.9634, -11.0483, 671.982, 1054.98, 15.6019, 3.80239, -15.6019, -3.80239, 515.639, 1003.88, 55.5702, -4.75467, -55.5702, 4.75467, 339.841, 990.821, 21.6021, -20.9759, -21.6021, 20.9759, 215.276, 1038.03, 8.45298, -36.6296, -8.45298, 36.6296, 171.115, 1115.12, -15.8642, -25.921, 15.8642, 25.921, 176.17, 1231.28, -22.5215, 2.12467, 22.5215, -2.12467, 248.426, 1259.04, -19.9719, 17.8472, 19.9719, -17.8472, 351.896, 1233.92, -5.66579, 30.5952, 5.66579, -30.5952, 393.083, 1134.47, -6.79894, 17.4223, 6.79894, -17.4223, 404.133, 1066.16, 0, 0, 0, 0, 430.252, 1010.91, -17.139, 12.748, 17.139, -12.748, 471.439, 933.561, -15.8642, -0.708223, 15.8642, 0.708223, 541.758, 920.502, -13.3146, -7.08223, 13.3146, 7.08223, 601.027, 937.579, -2.12467, -5.24085, 2.12467, 5.24085, 638.195, 976.757, 0.566579, -20.9634, -0.566579, 20.9634, 653.264, 1068.17, 3.16947, -23.3388, -3.16947, 23.3388, 639.2, 1156.57, -10.0847, -20.4575, 10.0847, 20.4575, 643.169, 1230.74, -14.1756, -6.56277, 14.1756, 6.56277, 680.387, 1271.09, -15.9257, 2.3626, 15.9257, -2.3626, 761.756, 1287.17, -8.31284, 14.5256, 8.31284, -14.5256, 801.939, 1260.04, 4.72519, 30.4512, -4.72519, -30.4512, 811.984, 1191.73, 0, 0, 0, 0, 764.77, 1133.47, 0, 0, 0, 0, 757.738, 1122.42 )
+}
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sea" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1000.31, 599.374 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 415.161, 257.002 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3000
+limit_bottom = 2000
+limit_smoothed = true
+
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 2, 0, 589836, 29, 0, 589837, 31, 0, 589838, 33, 0, 589839, 31, 0, 589840, 31, 0, 589841, 33, 0, 589842, 30, 0, 655360, 12, 0, 655361, 12, 0, 655362, 12, 0, 655363, 12, 0, 655364, 12, 0, 655365, 6, 0, 655372, 15, 0, 655373, 19, 0, 655374, 19, 0, 655375, 19, 0, 655376, 18, 0, 655377, 19, 0, 655378, 28, 0, 720896, 10, 0, 720897, 10, 0, 720898, 10, 0, 720899, 13, 0, 720900, 12, 0, 720901, 6, 0, 720908, 23, 0, 720909, 20, 0, 720910, 18, 0, 720911, 18, 0, 720912, 19, 0, 720913, 19, 0, 720914, 28, 0, 786435, 9, 0, 786436, 22, 0, 786437, 11, 0, 786445, 14, 0, 786446, 18, 0, 786447, 19, 0, 786448, 18, 0, 786449, 19, 0, 786450, 28, 0, 851980, 29, 0, 851981, 37, 0, 851982, 19, 0, 851983, 18, 0, 851984, 19, 0, 851985, 19, 0, 851986, 28, 0, 917516, 14, 0, 917517, 16, 0, 917518, 19, 0, 917519, 19, 0, 917520, 21, 0, 917521, 25, 0, 917522, 24, 0, 983052, 23, 0, 983053, 25, 0, 983054, 36, 0, 983055, 25, 0, 983056, 24, 0 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 757.738, 1122.42 )
+rotation = -2.3692
+
+[node name="Ememy1" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
+rotation = -1.53764
+
+[node name="Decoration" type="Node2D" parent="."]
+
+[node name="tile_88" type="Sprite" parent="Decoration"]
+position = Vector2( 1103.57, 782.214 )
+texture = ExtResource( 10 )
+
+[node name="tile_51" type="Sprite" parent="Decoration"]
+position = Vector2( 291.012, 686.943 )
+texture = ExtResource( 11 )
+
+[node name="tile_46" type="Sprite" parent="Decoration"]
+position = Vector2( 981.694, 865.476 )
+texture = ExtResource( 9 )
+
+[node name="tile_62" type="Sprite" parent="Decoration"]
+position = Vector2( 1109.54, 865.499 )
+texture = ExtResource( 8 )
+
+[node name="tile_90" type="Sprite" parent="Decoration"]
+position = Vector2( 1045.63, 865.616 )
+texture = ExtResource( 13 )
+
+[node name="tile_66" type="Sprite" parent="Decoration"]
+position = Vector2( 930.996, 677.551 )
+texture = ExtResource( 12 )
+
+[node name="tile_50" type="Sprite" parent="Decoration"]
+position = Vector2( 157.832, 653.638 )
+scale = Vector2( 1.33852, 1.43255 )
+texture = ExtResource( 5 )
+
+[node name="tile_67" type="Sprite" parent="Decoration"]
+position = Vector2( 1037, 746.504 )
+scale = Vector2( 1.33852, 1.43255 )
+texture = ExtResource( 7 )

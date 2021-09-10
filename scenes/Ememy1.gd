@@ -20,6 +20,8 @@ var fire_rate = 2
 func handle_hit():
 	hit_points -= 1
 	
+	change_detect_radius(1.5)
+	
 	if hit_points == 2:
 		$SailDamaged.visible = true
 		$SailNormal.visible = false
@@ -35,9 +37,9 @@ func _on_PlayerDetection_body_entered(body):
 	player = body
 	current_state = State.PURSUING
 
-
 func _on_PlayerDetection_body_exited(body):
 	current_state = State.IDLE
+	change_detect_radius(1.0)
 	if body == player:
 		player = null
 
@@ -51,11 +53,16 @@ func shoot_at_player():
 		projectile.apply_impulse(Vector2(), aim_vector * SHOT_ACCELERATION)
 		can_shoot = false
 		yield(get_tree().create_timer(fire_rate), "timeout")
-		can_shoot = true	
-
+		can_shoot = true
+			
+func change_detect_radius(scale: float):
+	get_node("PlayerDetection/DetectRadius").scale.x = scale
+	get_node("PlayerDetection/DetectRadius").scale.y = scale
+	
 func set_gust_behviour(switch: bool):
 	$WatergustParticles.emitting = switch
-			
+	$WatergustParticles2.emitting = switch
+		
 func _physics_process(delta):
 	# When this node is an instance of a pathfollow2d, it will be located relastive to the parent and also have the relative rotation
 	match current_state:
@@ -64,6 +71,7 @@ func _physics_process(delta):
 			set_gust_behviour(true)
 		State.PURSUING:
 			set_gust_behviour(false)
+			change_detect_radius(1.5)
 			shoot_at_player()
 			
 

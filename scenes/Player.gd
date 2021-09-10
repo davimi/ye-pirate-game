@@ -17,7 +17,7 @@ var velocity = Vector2() # The player's actual movement vector
 const DEFAULT_FACING_DIRECTION = Vector2(0,1)
 
 var cannon_balls = preload("res://scenes/Cannonball.tscn")
-const SHOT_ACCELERATION = 800
+const SHOT_ACCELERATION = 700
 var can_shoot_left = true
 var can_shoot_right = true
 var fire_rate = 0.5
@@ -32,7 +32,6 @@ func _ready():
 	$CannonRight.rotate_180()
 	
 	$WatergustParticles.speed_scale = 0
-	
 	set_damage_visuals(false)
 
 func set_damage_visuals(is_damaged: bool):
@@ -52,16 +51,6 @@ func move_player(delta):
 	velocity = motion * speed * delta
 	move_and_collide(velocity)
 	set_gust_behviour(motion.abs().length())
-
-func set_gust_behviour(scale: float):
-	$WatergustParticles.speed_scale = scale * 1.2
-	$WatergustParticles2.speed_scale = scale * 1.2
-	if scale <= 0.1:
-		$WatergustParticles.emitting = false
-		$WatergustParticles2.emitting = false
-	else:
-		$WatergustParticles.emitting = true
-		$WatergustParticles2.emitting = true
 
 
 func _get_rotation(delta):
@@ -89,7 +78,7 @@ func shoot_right():
 	shoot_direction(Vector2(-1,0).rotated(rotation), $CannonRight.position)
 	can_shoot_right = false
 	yield(get_tree().create_timer(fire_rate), "timeout")
-	can_shoot_right =  true
+	can_shoot_right = true
 
 func shoot_direction(direction: Vector2, from_position: Vector2):
 	var projectile = cannon_balls.instance()
@@ -104,6 +93,16 @@ func handle_hit():
 		set_damage_visuals(true)
 	if hit_points <= 0:
 		queue_free()
+
+func set_gust_behviour(scale: float):
+	$WatergustParticles.speed_scale = scale * 1.2
+	$WatergustParticles2.speed_scale = scale * 1.2
+	if scale <= 0.15:
+		$WatergustParticles.emitting = false
+		$WatergustParticles2.emitting = false
+	else:
+		$WatergustParticles.emitting = true
+		$WatergustParticles2.emitting = true
 	
 func _physics_process(delta):
 	move_player(delta)
@@ -116,4 +115,3 @@ func _process(delta):
 	elif Input.is_action_just_pressed("shoot_right") and can_shoot_right:
 		shoot_right()
 		
-

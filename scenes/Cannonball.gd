@@ -3,9 +3,11 @@ extends RigidBody2D
 
 var explosion = preload("res://scenes/Explosion.tscn")
 
+
 func _on_Cannonball_body_entered(body):
-	explode()
-	body.handle_hit()
+	if body.get_collision_layer() != 1:
+		explode()
+		body.handle_hit()
 	queue_free()
 
 func explode():
