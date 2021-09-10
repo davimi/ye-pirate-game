@@ -6,7 +6,7 @@ var screen_size
 const MIN_TURN_SPEED = 50
 const MAX_TURN_SPEED = 200
 
-export var speed: int = 120
+export var speed: int = 140
 var rotation_speed: float = 0.0174533
 var acceleration = 0.05
 var deceleration = 0.03
@@ -22,7 +22,9 @@ var can_shoot_left = true
 var can_shoot_right = true
 var fire_rate = 0.5
 
-var hit_points = 8
+signal player_hit(hit_points_left)
+const MAX_HITPOINTS = 8
+var hit_points: int = MAX_HITPOINTS
 
 
 func _ready():
@@ -31,6 +33,14 @@ func _ready():
 	
 	$WatergustParticles.speed_scale = 0
 	
+	set_damage_visuals(false)
+
+func set_damage_visuals(is_damaged: bool):
+	$HullDamaged.visible = is_damaged
+	$SailDamaged. visible = is_damaged
+	$Sail.visible = !is_damaged
+	$Hull.visible = !is_damaged
+
 func move_player(delta):
 	var movedir = _get_rotation(delta)
 	
@@ -44,8 +54,15 @@ func move_player(delta):
 	set_gust_behviour(motion.abs().length())
 
 func set_gust_behviour(scale: float):
-	# $WatergustParticles.process_material.initial_velocity = scale * 100
 	$WatergustParticles.speed_scale = scale * 1.2
+	$WatergustParticles2.speed_scale = scale * 1.2
+	if scale <= 0.1:
+		$WatergustParticles.emitting = false
+		$WatergustParticles2.emitting = false
+	else:
+		$WatergustParticles.emitting = true
+		$WatergustParticles2.emitting = true
+
 
 func _get_rotation(delta):
 	var turn_speed = _get_turn_speed()
@@ -82,6 +99,9 @@ func shoot_direction(direction: Vector2, from_position: Vector2):
 
 func handle_hit():
 	hit_points -= 1
+	emit_signal("player_hit", hit_points, MAX_HITPOINTS)
+	if hit_points <= (MAX_HITPOINTS / 2):
+		set_damage_visuals(true)
 	if hit_points <= 0:
 		queue_free()
 	

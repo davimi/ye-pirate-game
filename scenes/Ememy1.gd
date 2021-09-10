@@ -20,9 +20,12 @@ var fire_rate = 2
 func handle_hit():
 	hit_points -= 1
 	
-	if hit_points <= 1:
+	if hit_points == 2:
 		$SailDamaged.visible = true
 		$SailNormal.visible = false
+	if hit_points == 1:
+		$Hull.visible = false
+		$HullDamaged.visible = true
 	if hit_points <= 0:
 		queue_free()
 
@@ -50,17 +53,17 @@ func shoot_at_player():
 		yield(get_tree().create_timer(fire_rate), "timeout")
 		can_shoot = true	
 
-func set_gust_behviour(scale: float):
-	# $WatergustParticles.process_material.initial_velocity = scale * 100
-	$WatergustParticles.speed_scale = scale * 1.2
+func set_gust_behviour(switch: bool):
+	$WatergustParticles.emitting = switch
 			
 func _physics_process(delta):
 	# When this node is an instance of a pathfollow2d, it will be located relastive to the parent and also have the relative rotation
 	match current_state:
 		State.IDLE:
 			path_follow.set_offset(path_follow.get_offset() + speed_idle * delta)
+			set_gust_behviour(true)
 		State.PURSUING:
-			set_gust_behviour(0)
+			set_gust_behviour(false)
 			shoot_at_player()
 			
 
