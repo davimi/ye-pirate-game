@@ -86,5 +86,14 @@ position = Vector2( 6, -48 )
 [node name="WatergustParticles2" parent="." instance=ExtResource( 9 )]
 position = Vector2( -6, -48 )
 
+[node name="DebugText" type="Label" parent="."]
+margin_left = 42.7977
+margin_top = 6.93559
+margin_right = 82.7977
+margin_bottom = 20.9356
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited"]

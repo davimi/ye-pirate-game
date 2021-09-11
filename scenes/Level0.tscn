@@ -14,7 +14,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 412.061, 191.911, -18.8236, -44.7635, 18.8236, 44.7635, 433, 312.989, 0, 0, 0, 0, 513.913, 391.893, -32.3229, -10.4966, 32.3229, 10.4966, 649.203, 465.554, 0, 0, 0, 0, 736.932, 490.888, -47.5182, 16.9872, 47.5182, -16.9872, 822.644, 481.108, -27.0877, 44.0748, 27.0877, -44.0748, 924.772, 425.935, 0, 2.52512, 0, -2.52512, 971.14, 323.514, 6.65714, 54.4049, -6.65714, -54.4049, 986.694, 160.638, 21.6596, 14.1621, -21.6596, -14.1621, 946.195, 75.8253, 59.9142, 12.396, -59.9142, -12.396, 808.557, 37.6742, 49.1251, -3.21379, -49.1251, 3.21379, 622.791, 39.435, 19.7419, -4.36157, -19.7419, 4.36157, 531.815, 43.5436, 16.069, -12.396, -16.069, 12.396, 477.922, 70.8583, 15.1617, -25.3251, -15.1617, 25.3251, 439.414, 114.507, 0, 0, 0, 0, 415.941, 169.078, 0, 0, 0, 0, 412.061, 191.426, 0, 0, 0, 0, 412.061, 191.911 )
+"points": PoolVector2Array( 0, 0, 0, 0, 412.061, 191.911, -18.8236, -44.7635, 18.8236, 44.7635, 433, 312.989, 0, 0, 0, 0, 513.913, 391.893, -32.3229, -10.4966, 32.3229, 10.4966, 649.203, 465.554, -63.9143, 0.968399, 63.9143, -0.968399, 736.932, 490.888, -48.9708, 11.1768, 48.9708, -11.1768, 822.644, 481.108, -27.0877, 44.0748, 27.0877, -44.0748, 924.772, 425.935, 0, 2.52512, 0, -2.52512, 971.14, 323.514, 6.65714, 54.4049, -6.65714, -54.4049, 986.694, 160.638, 21.6596, 14.1621, -21.6596, -14.1621, 946.195, 75.8253, 59.9142, 12.396, -59.9142, -12.396, 808.557, 37.6742, 49.1251, -3.21379, -49.1251, 3.21379, 622.791, 39.435, 19.7419, -4.36157, -19.7419, 4.36157, 531.815, 43.5436, 16.069, -12.396, -16.069, 12.396, 477.922, 70.8583, 15.1617, -25.3251, -15.1617, 25.3251, 439.414, 114.507, 0, 0, 0, 0, 415.941, 169.078, 0, 0, 0, 0, 412.061, 191.426, 0, 0, 0, 0, 412.061, 191.911 )
 }
 
 [node name="Level0" type="Node2D"]
@@ -24,7 +24,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -0.00914001 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1300, 700 )
+position = Vector2( 965.902, 247.758 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -44,9 +44,9 @@ __meta__ = {
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 412.061, 191.911 )
-rotation = 1.53139
 
 [node name="Ememy1" parent="Path2D/PathFollow2D" instance=ExtResource( 8 )]
+position = Vector2( 0, 0 )
 rotation = -1.5708
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
@@ -111,9 +111,9 @@ offset = Vector2( 5, 5 )
 transform = Transform2D( 1, 0, 0, 1, 5, 5 )
 
 [connection signal="player_hit" from="Player" to="Player" method="_on_Player_player_hit"]
-[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson" to="." method="_on_ShipwreckedPerson_body_entered"]
 [connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
-[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson2" to="." method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson" to="." method="_on_ShipwreckedPerson_body_entered"]
 [connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson2" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
-[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson3" to="." method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson2" to="." method="_on_ShipwreckedPerson_body_entered"]
 [connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson3" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson3" to="." method="_on_ShipwreckedPerson_body_entered"]

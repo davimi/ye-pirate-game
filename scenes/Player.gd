@@ -87,8 +87,8 @@ func shoot_direction(direction: Vector2, from_position: Vector2):
 	projectile.apply_impulse(Vector2(), direction * SHOT_ACCELERATION)
 
 func handle_hit():
-	hit_points -= 1
-	emit_signal("player_hit", hit_points, MAX_HITPOINTS)
+	#hit_points -= 1
+	#emit_signal("player_hit", hit_points, MAX_HITPOINTS)
 	if hit_points <= (MAX_HITPOINTS / 2):
 		set_damage_visuals(true)
 	if hit_points <= 0:
