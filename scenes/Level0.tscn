@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Sea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/ShipwreckedPerson.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/SurvivorHUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Ememy1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_49.png" type="Texture" id=9]
@@ -44,6 +44,7 @@ __meta__ = {
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 412.061, 191.911 )
+rotation = 1.53139
 
 [node name="Ememy1" parent="Path2D/PathFollow2D" instance=ExtResource( 8 )]
 position = Vector2( 0, 0 )
@@ -106,14 +107,12 @@ position = Vector2( 716.677, 1432.63 )
 [node name="ShipwreckedPerson3" parent="ShipwreckedPersons" instance=ExtResource( 5 )]
 position = Vector2( 86.7271, 260.118 )
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
-offset = Vector2( 5, 5 )
-transform = Transform2D( 1, 0, 0, 1, 5, 5 )
+[node name="SurvivorHUD" parent="." instance=ExtResource( 6 )]
 
 [connection signal="player_hit" from="Player" to="Player" method="_on_Player_player_hit"]
-[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
 [connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson" to="." method="_on_ShipwreckedPerson_body_entered"]
-[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson2" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson" to="SurvivorHUD" method="_on_ShipwreckedPerson_body_entered"]
 [connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson2" to="." method="_on_ShipwreckedPerson_body_entered"]
-[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson3" to="HUD" method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson2" to="SurvivorHUD" method="_on_ShipwreckedPerson_body_entered"]
 [connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson3" to="." method="_on_ShipwreckedPerson_body_entered"]
+[connection signal="body_entered" from="ShipwreckedPersons/ShipwreckedPerson3" to="SurvivorHUD" method="_on_ShipwreckedPerson_body_entered"]

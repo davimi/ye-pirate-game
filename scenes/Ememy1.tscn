@@ -13,7 +13,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 23.7453
-height = 62.455
+height = 59.6792
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 314.976
@@ -73,6 +73,7 @@ position = Vector2( 0, -0.155228 )
 shape = SubResource( 1 )
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+visible = false
 gravity = 0.0
 collision_layer = 0
 collision_mask = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/Sea.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level1.gd" type="Script" id=2]
@@ -13,41 +13,41 @@
 [ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_51.png" type="Texture" id=11]
 [ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_66.png" type="Texture" id=12]
 [ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_90.png" type="Texture" id=13]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/flag (1).png" type="Texture" id=14]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/hullLarge (3).png" type="Texture" id=15]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/sailLarge (19).png" type="Texture" id=16]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_49.png" type="Texture" id=17]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/fishTile_098.png" type="Texture" id=18]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_78.png" type="Texture" id=19]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_94.png" type="Texture" id=20]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_77.png" type="Texture" id=21]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_16.png" type="Texture" id=22]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ships/dinghySmall3.png" type="Texture" id=23]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_93.png" type="Texture" id=24]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_15.png" type="Texture" id=25]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_27.png" type="Texture" id=26]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_70.png" type="Texture" id=27]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Tiles/tile_65.png" type="Texture" id=28]
+[ext_resource path="res://kenney_piratepack/PNG/Default size/Ship parts/wood (2).png" type="Texture" id=29]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 757.738, 1122.42, 20.9634, 11.0483, -20.9634, -11.0483, 671.982, 1054.98, 15.6019, 3.80239, -15.6019, -3.80239, 515.639, 1003.88, 55.5702, -4.75467, -55.5702, 4.75467, 339.841, 990.821, 21.6021, -20.9759, -21.6021, 20.9759, 215.276, 1038.03, 8.45298, -36.6296, -8.45298, 36.6296, 171.115, 1115.12, -15.8642, -25.921, 15.8642, 25.921, 176.17, 1231.28, -22.5215, 2.12467, 22.5215, -2.12467, 248.426, 1259.04, -19.9719, 17.8472, 19.9719, -17.8472, 351.896, 1233.92, -5.66579, 30.5952, 5.66579, -30.5952, 393.083, 1134.47, -6.79894, 17.4223, 6.79894, -17.4223, 404.133, 1066.16, 0, 0, 0, 0, 430.252, 1010.91, -17.139, 12.748, 17.139, -12.748, 471.439, 933.561, -15.8642, -0.708223, 15.8642, 0.708223, 541.758, 920.502, -13.3146, -7.08223, 13.3146, 7.08223, 601.027, 937.579, -2.12467, -5.24085, 2.12467, 5.24085, 638.195, 976.757, 0.566579, -20.9634, -0.566579, 20.9634, 653.264, 1068.17, 3.16947, -23.3388, -3.16947, 23.3388, 639.2, 1156.57, -10.0847, -20.4575, 10.0847, 20.4575, 643.169, 1230.74, -14.1756, -6.56277, 14.1756, 6.56277, 680.387, 1271.09, -15.9257, 2.3626, 15.9257, -2.3626, 761.756, 1287.17, -8.31284, 14.5256, 8.31284, -14.5256, 801.939, 1260.04, 4.72519, 30.4512, -4.72519, -30.4512, 811.984, 1191.73, 0, 0, 0, 0, 764.77, 1133.47, 0, 0, 0, 0, 757.738, 1122.42 )
 }
 
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 17.9367, 15.6728, -17.9367, -15.6728, 1332.15, 540.887, 32.9129, 1.56728, -32.9129, -1.56728, 1196.54, 509.684, 46.1477, -1.56728, -46.1477, 1.56728, 1006.93, 509.084, 0, 0, 0, 0, 880.919, 516.885, 37.2665, -7.48812, -37.2665, 7.48812, 785.512, 524.085, 30.9973, -36.5699, -30.9973, 36.5699, 717.107, 561.888, -1.04485, -39.7044, 1.04485, 39.7044, 705.106, 692.698, 0, -30.4749, 0, 30.4749, 697.305, 831.309, 0, 0, 0, 0, 700.306, 913.515, -6.96569, -33.4353, 6.96569, 33.4353, 710.506, 1001.12, -38.3113, -12.8865, 38.3113, 12.8865, 763.31, 1060.53, -53.81, -4.87598, 53.81, 4.87598, 867.718, 1085.73, 0, 0, 0, 0, 986.527, 1084.53, -41.9683, 2.43799, 41.9683, -2.43799, 1107.19, 1082.83, 0, 0, 0, 0, 1213.24, 1078.82, -40.401, 10.971, 40.401, -10.971, 1301.55, 1068.93, -20.8971, 25.0765, 20.8971, -25.0765, 1368.16, 1014.92, 0, 0, 0, 0, 1390.64, 899.429, 0, 0, 0, 0, 1388.39, 748.67, 13.9314, 51.0237, -13.9314, -51.0237, 1377.55, 611.753, 0, 0, 0, 0, 1341.75, 548.687, 0, 0, 0, 0, 1332.15, 540.887 )
+}
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sea" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1000.31, 599.374 )
-
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 415.161, 257.002 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 3000
-limit_bottom = 2000
-limit_smoothed = true
+position = Vector2( 979.888, 625.368 )
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
-tile_data = PoolIntArray( 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 2, 0, 589836, 29, 0, 589837, 31, 0, 589838, 33, 0, 589839, 31, 0, 589840, 31, 0, 589841, 33, 0, 589842, 30, 0, 655360, 12, 0, 655361, 12, 0, 655362, 12, 0, 655363, 12, 0, 655364, 12, 0, 655365, 6, 0, 655372, 15, 0, 655373, 19, 0, 655374, 19, 0, 655375, 19, 0, 655376, 18, 0, 655377, 19, 0, 655378, 28, 0, 720896, 10, 0, 720897, 10, 0, 720898, 10, 0, 720899, 13, 0, 720900, 12, 0, 720901, 6, 0, 720908, 23, 0, 720909, 20, 0, 720910, 18, 0, 720911, 18, 0, 720912, 19, 0, 720913, 19, 0, 720914, 28, 0, 786435, 9, 0, 786436, 22, 0, 786437, 11, 0, 786445, 14, 0, 786446, 18, 0, 786447, 19, 0, 786448, 18, 0, 786449, 19, 0, 786450, 28, 0, 851980, 29, 0, 851981, 37, 0, 851982, 19, 0, 851983, 18, 0, 851984, 19, 0, 851985, 19, 0, 851986, 28, 0, 917516, 14, 0, 917517, 16, 0, 917518, 19, 0, 917519, 19, 0, 917520, 21, 0, 917521, 25, 0, 917522, 24, 0, 983052, 23, 0, 983053, 25, 0, 983054, 36, 0, 983055, 25, 0, 983056, 24, 0 )
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 1 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 757.738, 1122.42 )
-rotation = -2.42855
-
-[node name="Ememy1" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
-rotation = -1.53764
+tile_data = PoolIntArray( 196647, 29, 0, 196648, 32, 0, 196649, 32, 0, 196650, 40, 0, 262183, 39, 0, 262184, 16, 0, 262185, 21, 0, 262186, 24, 0, 327719, 39, 0, 327720, 16, 0, 327721, 28, 0, 393255, 23, 0, 393256, 25, 0, 393257, 24, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 2, 0, 589836, 29, 0, 589837, 31, 0, 589838, 33, 0, 589839, 31, 0, 589840, 31, 0, 589841, 40, 0, 655360, 12, 0, 655361, 12, 0, 655362, 12, 0, 655363, 12, 0, 655364, 12, 0, 655365, 6, 0, 655372, 39, 0, 655373, 19, 0, 655374, 19, 0, 655375, 19, 0, 655376, 18, 0, 655377, 38, 0, 655378, 40, 0, 655404, 29, 0, 655405, 31, 0, 655406, 31, 0, 655407, 40, 0, 720896, 10, 0, 720897, 10, 0, 720898, 10, 0, 720899, 13, 0, 720900, 12, 0, 720901, 6, 0, 720908, 23, 0, 720909, 20, 0, 720910, 18, 0, 720911, 18, 0, 720912, 19, 0, 720913, 19, 0, 720914, 28, 0, 720940, 39, 0, 720941, 16, 0, 720942, 21, 0, 720943, 24, 0, 786435, 9, 0, 786436, 22, 0, 786437, 11, 0, 786445, 39, 0, 786446, 18, 0, 786447, 19, 0, 786448, 18, 0, 786449, 19, 0, 786450, 28, 0, 786476, 23, 0, 786477, 20, 0, 786478, 28, 0, 851980, 29, 0, 851981, 37, 0, 851982, 19, 0, 851983, 18, 0, 851984, 19, 0, 851985, 19, 0, 851986, 28, 0, 852013, 39, 0, 852014, 28, 0, 917516, 39, 0, 917517, 16, 0, 917518, 19, 0, 917519, 19, 0, 917520, 21, 0, 917521, 25, 0, 917522, 24, 0, 917549, 39, 0, 917550, 38, 0, 917551, 40, 0, 983052, 23, 0, 983053, 25, 0, 983054, 36, 0, 983055, 25, 0, 983056, 24, 0, 983085, 23, 0, 983086, 26, 0, 983087, 24, 0, 1114151, 29, 0, 1114152, 32, 0, 1114153, 33, 0, 1114154, 32, 0, 1114155, 33, 0, 1114156, 40, 0, 1179678, 29, 0, 1179679, 33, 0, 1179680, 32, 0, 1179681, 33, 0, 1179682, 40, 0, 1179687, 39, 0, 1179688, 18, 0, 1179689, 18, 0, 1179690, 18, 0, 1179691, 18, 0, 1179692, 28, 0, 1245214, 39, 0, 1245215, 19, 0, 1245216, 19, 0, 1245217, 19, 0, 1245218, 38, 0, 1245219, 33, 0, 1245220, 32, 0, 1245221, 33, 0, 1245222, 32, 0, 1245223, 37, 0, 1245224, 18, 0, 1245225, 18, 0, 1245226, 18, 0, 1245227, 18, 0, 1245228, 38, 0, 1245229, 40, 0, 1310750, 39, 0, 1310751, 19, 0, 1310752, 18, 0, 1310753, 18, 0, 1310754, 18, 0, 1310755, 18, 0, 1310756, 18, 0, 1310757, 18, 0, 1310758, 18, 0, 1310759, 18, 0, 1310760, 18, 0, 1310761, 18, 0, 1310762, 18, 0, 1310763, 18, 0, 1310764, 18, 0, 1310765, 38, 0, 1310766, 32, 0, 1310767, 33, 0, 1310768, 32, 0, 1310769, 32, 0, 1310770, 32, 0, 1376282, 29, 0, 1376283, 32, 0, 1376284, 33, 0, 1376285, 33, 0, 1376286, 37, 0, 1376287, 19, 0, 1376288, 18, 0, 1376289, 18, 0, 1376290, 18, 0, 1376291, 21, 0, 1376292, 25, 0, 1376293, 20, 0, 1376294, 16, 0, 1376295, 16, 0, 1376296, 16, 0, 1376297, 16, 0, 1376298, 16, 0, 1376299, 21, 0, 1376300, 25, 0, 1376301, 25, 0, 1376302, 20, 0, 1376303, 18, 0, 1376304, 18, 0, 1376305, 18, 0, 1376306, 18, 0, 1441818, 39, 0, 1441819, 18, 0, 1441820, 19, 0, 1441821, 16, 0, 1441822, 19, 0, 1441823, 16, 0, 1441824, 21, 0, 1441825, 25, 0, 1441826, 26, 0, 1441827, 24, 0, 1441829, 23, 0, 1441830, 25, 0, 1441831, 25, 0, 1441832, 20, 0, 1441833, 16, 0, 1441834, 16, 0, 1441835, 28, 0, 1441838, 23, 0, 1441839, 26, 0, 1441840, 26, 0, 1441841, 26, 0, 1441842, 26, 0, 1507354, 39, 0, 1507355, 19, 0, 1507356, 5, 0, 1507357, 5, 0, 1507358, 19, 0, 1507359, 21, 0, 1507360, 24, 0, 1507368, 23, 0, 1507369, 26, 0, 1507370, 26, 0, 1507371, 24, 0, 1572869, 0, 0, 1572870, 1, 0, 1572871, 1, 0, 1572872, 2, 0, 1572880, 29, 0, 1572881, 33, 0, 1572882, 40, 0, 1572890, 39, 0, 1572891, 18, 0, 1572892, 5, 0, 1572893, 5, 0, 1572894, 18, 0, 1572895, 28, 0, 1638404, 0, 0, 1638405, 8, 0, 1638406, 3, 0, 1638407, 10, 0, 1638408, 11, 0, 1638416, 39, 0, 1638417, 19, 0, 1638418, 28, 0, 1638426, 23, 0, 1638427, 36, 0, 1638428, 25, 0, 1638429, 25, 0, 1638430, 26, 0, 1638431, 24, 0, 1703940, 4, 0, 1703941, 12, 0, 1703942, 6, 0, 1703952, 23, 0, 1703953, 25, 0, 1703954, 24, 0, 1769476, 4, 0, 1769477, 3, 0, 1769478, 11, 0, 1835012, 9, 0, 1835013, 11, 0, 2031643, 29, 0, 2031644, 33, 0, 2031645, 33, 0, 2031646, 40, 0, 2097179, 39, 0, 2097180, 16, 0, 2097181, 16, 0, 2097182, 28, 0 )
 
 [node name="Decoration" type="Node2D" parent="."]
 
@@ -84,3 +84,348 @@ texture = ExtResource( 5 )
 position = Vector2( 1037, 746.504 )
 scale = Vector2( 1.33852, 1.43255 )
 texture = ExtResource( 7 )
+
+[node name="fishTile_098" type="Sprite" parent="Decoration"]
+position = Vector2( 1103.03, 1637.77 )
+rotation = 1.0472
+texture = ExtResource( 18 )
+
+[node name="tile_49" type="Sprite" parent="Decoration"]
+position = Vector2( 315.037, 1670.73 )
+texture = ExtResource( 17 )
+
+[node name="tile_52" type="Sprite" parent="Decoration"]
+position = Vector2( 352.6, 1762.55 )
+rotation = 1.57079
+texture = ExtResource( 5 )
+
+[node name="tile_53" type="Sprite" parent="Decoration"]
+position = Vector2( 504.996, 1595.79 )
+rotation = 0.785397
+texture = ExtResource( 17 )
+
+[node name="hullLarge (3)" type="Sprite" parent="Decoration"]
+position = Vector2( 401.275, 1737.13 )
+rotation = 0.523598
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="flag (1)" type="Sprite" parent="Decoration/hullLarge (3)"]
+position = Vector2( 0, -33.9347 )
+rotation = 0.261799
+texture = ExtResource( 14 )
+
+[node name="sailLarge (19)" type="Sprite" parent="Decoration/hullLarge (3)"]
+position = Vector2( -0.622711, 0.934204 )
+texture = ExtResource( 16 )
+
+[node name="dinghySmall3" type="Sprite" parent="Decoration"]
+position = Vector2( 1794.97, 1631.25 )
+rotation = 0.523598
+texture = ExtResource( 23 )
+
+[node name="tile_54" type="Sprite" parent="Decoration"]
+position = Vector2( 1994.98, 1494.85 )
+texture = ExtResource( 11 )
+
+[node name="tile_70" type="Sprite" parent="Decoration"]
+position = Vector2( 2014.2, 1405.81 )
+rotation = -0.523598
+texture = ExtResource( 27 )
+
+[node name="tile_71" type="Sprite" parent="Decoration"]
+position = Vector2( 2141.03, 1240.82 )
+texture = ExtResource( 27 )
+
+[node name="tile_72" type="Sprite" parent="Decoration"]
+position = Vector2( 2774.29, 1188.79 )
+texture = ExtResource( 27 )
+
+[node name="tile_91" type="Sprite" parent="Decoration"]
+position = Vector2( 2131.89, 1348.33 )
+rotation = 0.785397
+texture = ExtResource( 10 )
+
+[node name="tile_89" type="Sprite" parent="Decoration"]
+position = Vector2( 1977.15, 1443.93 )
+texture = ExtResource( 10 )
+
+[node name="tile_68" type="Sprite" parent="Decoration"]
+position = Vector2( 2653.47, 1316.43 )
+rotation = 2.61799
+texture = ExtResource( 12 )
+
+[node name="tile_65" type="Sprite" parent="Decoration/tile_68"]
+position = Vector2( -3.10718, -68.3601 )
+texture = ExtResource( 28 )
+
+[node name="tile_66" type="Sprite" parent="Decoration/tile_68"]
+position = Vector2( 34.2444, -28.7266 )
+rotation = -2.35619
+texture = ExtResource( 28 )
+
+[node name="Castle" type="Sprite" parent="Decoration"]
+position = Vector2( 1909.71, 1455.48 )
+texture = ExtResource( 19 )
+
+[node name="wood (2)7" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -92.7969, 98.829 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)2" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( 11, -7 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( 24.5303, 0 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)3" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( 34.6027, -7.08801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)4" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( -8.22192, -7.4801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)5" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( 49.573, 0.0501709 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)6" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( 58.7385, -7.16211 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)7" type="Sprite" parent="Decoration/Castle/wood (2)7"]
+position = Vector2( 64.9359, 0.228882 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)6" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -92.3977, 82.0353 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)2" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( 11, -7 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( 24.5303, 0 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)3" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( 34.6027, -7.08801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)4" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( -8.22192, -7.4801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)5" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( 49.573, 0.0501709 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)6" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( 58.7385, -7.16211 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)7" type="Sprite" parent="Decoration/Castle/wood (2)6"]
+position = Vector2( 65.031, 0.085083 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)5" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -92.4641, 66.2513 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)2" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( 11, -7 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( 24.5303, 0 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)3" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( 34.6027, -7.08801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)4" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( -8.22192, -7.4801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)5" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( 49.573, 0.0501709 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)6" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( 58.7385, -7.16211 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)7" type="Sprite" parent="Decoration/Castle/wood (2)5"]
+position = Vector2( 64.9993, -0.200317 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)4" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -93.1301, 50.5411 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)2" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( 11, -7 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( 24.5303, 0 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)3" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( 34.6027, -7.08801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)4" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( -8.22192, -7.4801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)5" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( 49.573, 0.0501709 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)6" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( 58.7385, -7.16211 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)7" type="Sprite" parent="Decoration/Castle/wood (2)4"]
+position = Vector2( 64.9993, -0.200317 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)3" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -92.9033, 33.7987 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)2" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( 11, -7 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( 24.5303, 0 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)3" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( 34.6027, -7.08801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)4" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( -8.22192, -7.4801 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)5" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( 49.573, 0.0501709 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)6" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( 58.7385, -7.16211 )
+texture = ExtResource( 29 )
+
+[node name="wood (2)7" type="Sprite" parent="Decoration/Castle/wood (2)3"]
+position = Vector2( 64.9993, -0.200317 )
+texture = ExtResource( 29 )
+
+[node name="tile_27" type="Sprite" parent="Decoration/Castle"]
+modulate = Color( 0.356863, 0.392157, 0.368627, 1 )
+position = Vector2( -62.8628, 64.8964 )
+scale = Vector2( 1.51008, 1.44028 )
+texture = ExtResource( 26 )
+
+[node name="tile_93" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -127.248, 125.735 )
+texture = ExtResource( 24 )
+
+[node name="tile_16" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -63.3469, 125.823 )
+texture = ExtResource( 22 )
+
+[node name="tile_18" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -63.9452, -0.175293 )
+texture = ExtResource( 22 )
+
+[node name="tile_15" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -127.396, 62.7166 )
+texture = ExtResource( 25 )
+
+[node name="tile_17" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -0.0229492, 62.2329 )
+scale = Vector2( 1, 1.1 )
+texture = ExtResource( 25 )
+
+[node name="tile_77" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -127.35, -0.294556 )
+texture = ExtResource( 21 )
+
+[node name="tile_94" type="Sprite" parent="Decoration/Castle"]
+position = Vector2( -0.088623, 125.852 )
+texture = ExtResource( 20 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 415.161, 257.002 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3120
+limit_bottom = 2060
+limit_smoothed = true
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Enemies"]
+position = Vector2( -64, 29 )
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D"]
+position = Vector2( 757.738, 1122.42 )
+rotation = -2.42852
+
+[node name="Ememy1" parent="Enemies/Path2D/PathFollow2D" instance=ExtResource( 6 )]
+rotation = -1.53764
+
+[node name="Path2D2" type="Path2D" parent="Enemies"]
+position = Vector2( 1374.04, -765.725 )
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D2"]
+position = Vector2( 757.738, 1122.42 )
+rotation = -2.42852
+
+[node name="Ememy1" parent="Enemies/Path2D2/PathFollow2D" instance=ExtResource( 6 )]
+rotation = -1.53764
+
+[node name="Path2D3" type="Path2D" parent="Enemies"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D3"]
+position = Vector2( 1332.15, 540.887 )
+rotation = -2.51433
+
+[node name="Ememy1" parent="Enemies/Path2D3/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 0, 0 )
+
+[node name="Path2D4" type="Path2D" parent="Enemies"]
+position = Vector2( 151.889, 897.616 )
+curve = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D4"]
+position = Vector2( 1332.15, 540.887 )
+rotation = -2.51433
+
+[node name="Ememy1" parent="Enemies/Path2D4/PathFollow2D" instance=ExtResource( 6 )]
+position = Vector2( 0, 0 )

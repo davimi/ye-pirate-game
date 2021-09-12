@@ -5,13 +5,15 @@ onready var path_follow: PathFollow2D = get_parent()
 
 var hit_points = 3
 
-enum State {PATROLLING, PURSUING, RETREATING}
-const NOTICE_SCALAR = 1.2 # rate at which notice radius increases
+enum State {PATROLLING, PURSUING, RETREATING, TURNING}
+const NOTICE_SCALAR = 1.0 # rate at which notice radius increases
 var current_state = State.PATROLLING
 var return_position: Vector2 = get_global_position()
 var speed_patrolling = 100
-var speed_pursuing = 100
+var speed_pursuing = 4000 # why so high?
 const MIN_DISTANCE_TO_PLAYER = 120
+var pursuing_rotation: float = 0
+var elapsed_angle_lerp: float = 10
 
 var player: KinematicBody2D
 
@@ -44,7 +46,8 @@ func _on_PlayerDetection_body_entered(body):
 	current_state = State.PURSUING
 
 func _on_PlayerDetection_body_exited(body):
-	current_state = State.RETREATING
+	current_state = State.TURNING
+	pursuing_rotation = get_global_rotation()
 	change_detect_radius(1.0)
 	if body == player:
 		player = null
@@ -66,7 +69,7 @@ func pursue_player(delta: float):
 		if (player_in_pursue_range()):
 			look_at(player.get_global_position())
 			rotate_with_sprite_correction()
-			move_and_slide((player.get_global_position() - get_global_position()) * speed_pursuing * delta)
+			move_and_slide((player.get_global_position() - get_global_position()).normalized() * speed_pursuing * delta)
 
 func player_in_pursue_range() -> bool:
 	var distance_from_last_patrolling_point = (get_global_position() - return_position).length()
@@ -87,7 +90,7 @@ func set_gust_behviour(switch: bool):
 func return_to_starting_point(from: Vector2, delta: float):
 	look_at(return_position)
 	rotate_with_sprite_correction()
-	move_and_slide((return_position - from) * speed_patrolling * delta)
+	move_and_slide((return_position - from).normalized() * speed_pursuing * delta)
 
 # sprite looks downward
 func rotate_with_sprite_correction():
@@ -114,6 +117,16 @@ func _physics_process(delta):
 				current_state = State.PATROLLING
 			else:
 				return_to_starting_point(get_global_position(), delta)
+		State.TURNING:
+			$DebugText.text = "TURNING"
+			var currentRotation = get_global_rotation()
+			print("lerp: ", lerp_angle(currentRotation, pursuing_rotation, elapsed_angle_lerp))
+			print("pursuing rot: ", pursuing_rotation)
+			rotation = lerp_angle(currentRotation, pursuing_rotation, elapsed_angle_lerp)
+			elapsed_angle_lerp += delta / 5
+			if (abs(currentRotation - pursuing_rotation) <= 0.1):
+				elapsed_angle_lerp = 0.01
+				current_state = State.RETREATING
 			
 
 

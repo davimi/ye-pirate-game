@@ -68,7 +68,7 @@ scale = Vector2( 1, 0.798957 )
 texture = ExtResource( 7 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 10 )]
-offset = Vector2( 110, 5 )
-transform = Transform2D( 1, 0, 0, 1, 110, 5 )
+offset = Vector2( 5, 5 )
+transform = Transform2D( 1, 0, 0, 1, 5, 5 )
 
 [connection signal="player_hit" from="." to="HealthBar" method="_on_Player_player_hit"]

@@ -11,6 +11,8 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="HUD" type="CanvasLayer"]
+offset = Vector2( 225, 5 )
+transform = Transform2D( 1, 0, 0, 1, 225, 5 )
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="Panel" parent="."]
